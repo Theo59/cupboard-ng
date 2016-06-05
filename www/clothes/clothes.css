@@ -1,0 +1,4 @@
+#clothes {
+  display: flex;
+  flex-wrap: wrap;
+}
