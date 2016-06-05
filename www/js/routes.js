@@ -1,4 +1,4 @@
-angular.module('app.routes', [])
+angular.module('cupboard-ng.routes', [])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -12,8 +12,15 @@ angular.module('app.routes', [])
     url: '/',
     views: {
       'home': {
-        templateUrl: 'templates/home.html',
-        controller: 'homeCtrl'
+        templateUrl: 'home/home.html',
+        controller: 'HomeController'
+        //resolve: {
+        //  /* @ngInject */
+        //  user: function (UserService) {
+        //    return UserService.getUser();
+        //  }
+        //}
+
       }
     }
   })
@@ -28,8 +35,8 @@ angular.module('app.routes', [])
     url: '/garderobe',
     views: {
       'home': {
-        templateUrl: 'templates/cupboard.html',
-        controller: 'CupboardCtrl'
+        templateUrl: 'cupboard/cupboard.html',
+        controller: 'CupboardController'
       }
     }
   })
@@ -38,8 +45,8 @@ angular.module('app.routes', [])
     url: '/looks',
     views: {
       'home': {
-        templateUrl: 'templates/looks.html',
-        controller: 'LooksCtrl'
+        templateUrl: 'looks/looks.html',
+        controller: 'LooksController'
       }
     }
   })
@@ -48,23 +55,40 @@ angular.module('app.routes', [])
     url: '/garderobe/clothes',
     views: {
       'home': {
-        templateUrl: 'templates/clothes.html',
-        controller: 'ClothesCtrl'
+        templateUrl: 'clothes/clothes.html',
+        controller: 'ClothesController'
       }
     }
   })
 
-  .state('menu.a_clothe', {
+  .state('menu.clothe', {
     url: '/garderobe/clothes/one',
     views: {
       'home': {
-        templateUrl: 'templates/a_clothe.html',
-        controller: 'AclothesCtrl'
+        templateUrl: 'clothe/clothe.html',
+        controller: 'ClotheController'
       }
     }
   })
 
-$urlRouterProvider.otherwise('/home/')
+  .state('signup', {
+    url: '/signup',
+    templateUrl: 'signup/signup.html',
+    controller: 'SignupController'
+  })
+
+  .state('login', {
+    url: '/login',
+    templateUrl: 'login/login.html',
+    controller: 'LoginController'
+  })
+  .state('reset', {
+    url: '/reset',
+    templateUrl: 'reset/reset.html',
+    controller: 'ResetController'
+  })
+
+$urlRouterProvider.otherwise('signup');
 
 
 

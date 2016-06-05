@@ -37,5 +37,8 @@
 
       </div>
 
+      <input ng-model="userName">
+      <button ng-click="saveUser(userName)">Save</button>
+      <div ng-repeat="user in users">{{user.username}}</div>
     </ion-content>
 </ion-view>
