@@ -12,10 +12,10 @@
   function AddClotheController($scope, CameraService) {
 
     $scope.images = [];
-    $scope.getPhoto = getPhoto;
+    $scope.addImage = addImage;
     $scope.urlForImage = urlForImage;
 
-    function getPhoto() {
+    function addImage() {
       CameraService.getPicture().then(function(imageURI) {
         console.log(imageURI);
         $scope.lastPhoto = imageURI;
