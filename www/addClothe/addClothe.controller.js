@@ -9,31 +9,27 @@
     .controller('AddClotheController', AddClotheController);
 
   /* @ngInject */
-  function AddClotheController($scope, CameraService) {
+  function AddClotheController($scope, $cordovaCamera) {
 
-    $scope.images = [];
-    $scope.addImage = addImage;
-    $scope.urlForImage = urlForImage;
+    $scope.takePicture = function() {
+            var options = {
+                quality : 75,
+                destinationType : Camera.DestinationType.DATA_URL,
+                sourceType : Camera.PictureSourceType.CAMERA,
+                allowEdit : true,
+                encodingType: Camera.EncodingType.JPEG,
+                targetWidth: 300,
+                targetHeight: 300,
+                popoverOptions: CameraPopoverOptions,
+                saveToPhotoAlbum: false
+            };
 
-    function addImage() {
-      CameraService.getPicture().then(function(imageURI) {
-        console.log(imageURI);
-        $scope.lastPhoto = imageURI;
-      }, function(err) {
-        console.err(err);
-      }, {
-        quality: 75,
-        targetWidth: 320,
-        targetHeight: 320,
-        saveToPhotoAlbum: false
-      });
-    }
-
-    function urlForImage(imageName) {
-      var name = imageName.substr(imageName.lastIndexOf('/') + 1);
-      var trueOrigin = cordova.file.dataDirectory + name;
-      return trueOrigin;
-    }
+            $cordovaCamera.getPicture(options).then(function(imageData) {
+                $scope.imgURI = "data:image/jpeg;base64," + imageData;
+            }, function(err) {
+                // An error occured. Show a message to the user
+            });
+        }
 
 
   }
