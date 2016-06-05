@@ -11,7 +11,7 @@ angular
 .run(function($ionicPlatform) {
 
     Parse.initialize("CUPBOARD001");// MOVED OUT OF 'ready'
-    Parse.serverURL = 'http://api.hugo-garbez.fr';
+    Parse.serverURL = 'https://api.hugo-garbez.fr';
 
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
