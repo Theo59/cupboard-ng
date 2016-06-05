@@ -1,20 +1,22 @@
 <ion-view title="Log In">
-    <ion-content>
+  <ion-nav-bar class="bar-assertive">
+      <!-- <ion-nav-back-button></ion-nav-back-button> -->
+  </ion-nav-bar>
+    <ion-content padding="true">
         <ion-list>
-            <label class="item item-input item-floating-label">
-                <span class="input-label">Username</span>
-                <input type="text" placeholder="Username" id="username" ng-model="user.username">
+
+            <label class="item item-input">
+              <i class="icon ion-ios-email-outline placeholder-icon" style="font-size: 32px;width:32px;"></i>
+              <input type="text" placeholder="Username" id="username" ng-model="user.username">
             </label>
-            <label class="item item-input item-floating-label ">
-                <span class="input-label">Password</span>
-                <input type="password" placeholder="Password" id="password" ng-model="user.password">
+            <label class="item item-input">
+              <i class="icon ion-ios-locked-outline placeholder-icon" style="font-size: 32px;width:32px;"></i>
+              <input type="password" placeholder="Password" id="password" ng-model="user.password">
             </label>
-            <button class="button button-block button-balanced" ng-click="login(user)" ng-disabled="!ready">LOG IN</button>
-            <button class="button button-block button-clear" id="forgot-button" ui-sref="reset">FORGOT PASSWORD ?</button>
-         <!--TODO--> <!--<button class="button button-block button-positive"  ng-click="fbLogin()">FACEBOOK</button>-->
+            <button class="button button-block button-balanced" ng-click="login(user)" ng-disabled="!ready">Sign In</button>
+            <div class="row">
+              <div class="col"><button class="button button-block button-clear" id="forgot-button" ui-sref="reset" style="font-size:14px;">Forgot password ?</button></div>
+              <div class="col"><button class="button button-block button-clear" id="forgot-button" ui-sref="signup" style="font-size:14px;">Register</button></div>
+            </div>
         </ion-list>
-    </ion-content>
-    <ion-footer-bar class="bar bar-footer bar-light" ui-sref="signup">
-        <h1 class="title">Don't have an account ?</h1>
-    </ion-footer-bar>
 </ion-view>

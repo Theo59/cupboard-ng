@@ -19,7 +19,7 @@
       });
 
     $urlRouterProvider
-      .otherwise('signup');
+      .otherwise('login');
 
   }
 

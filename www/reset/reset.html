@@ -1,12 +1,16 @@
 <ion-view title="Password Reset">
-    <ion-nav-buttons>
-        <button class="button button-icon icon back-arrow" ui-sref="login"></button>
-    </ion-nav-buttons>
-    <ion-content>
+    <ion-nav-bar class="bar-assertive">
+        <ion-nav-buttons>
+            <button class="button button-icon" ui-sref="login">BACK</button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-content padding="true">
+      <p>Please enter your email address and we'll send you an email to reset password.</p>
         <ion-list>
-            <label class="item item-input item-floating-label">
-                <span class="input-label">Email</span>
-                <input type="text" placeholder="Email" id="reset-email" ng-model="user.email">
+            <label class="item item-input">
+              <i class="icon ion-ios-email-outline placeholder-icon" style="font-size: 32px;width:32px;"></i>
+              <input type="text" placeholder="Email" id="reset-email" ng-model="user.email">
             </label>
             <button class="button button-block button-balanced" ng-click="reset(user)" ng-disabled="!ready">RESET</button>
         </ion-list>
