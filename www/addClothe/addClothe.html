@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<ion-view class="has-header padding">
+  <button class="button button-energized" ng-click="addImage()">
+    Add image
+  </button><br><br>
+  <ion-scroll>
+    <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" height="200px"/>
+  </ion-scroll>
+</ion-view>

@@ -13,12 +13,8 @@
     $stateProvider
       .state('add-clothe', {
         url: '/add-clothe',
-        views: {
-          'home': {
-            templateUrl: 'addClothe/addClothe.html',
-            controller: 'AddClotheController'
-          }
-        }
+        templateUrl: 'addClothe/addClothe.html',
+        controller: 'AddClotheController'
       })
   }
 
