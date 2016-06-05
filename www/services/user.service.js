@@ -78,6 +78,13 @@
         });
       };
 
+      userService.logOut = function () {
+
+        Parse.User.logOut().then(function() {
+          $state.go('login');
+        });
+
+      };
 
       return userService;
     });

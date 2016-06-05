@@ -9,10 +9,11 @@
     .controller('HomeController', HomeController);
 
   /* @ngInject */
-  function HomeController($scope) {
+  function HomeController($scope, UserService) {
 
     $scope.users = [];
     $scope.saveUser = saveUser;
+
 
     activate();
 
