@@ -5,7 +5,8 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('cupboard-ng', ['ionic', 'cupboard-ng.routes', 'cupboard-ng.services', 'cupboard-ng.directives'])
+angular
+  .module('cupboard-ng', ['ionic', 'cupboard-ng.services'])
 
 .run(function($ionicPlatform) {
 
@@ -24,4 +25,4 @@ angular.module('cupboard-ng', ['ionic', 'cupboard-ng.routes', 'cupboard-ng.servi
       StatusBar.styleDefault();
     }
   });
-})
+});
