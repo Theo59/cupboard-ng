@@ -9,7 +9,7 @@
     .controller('LoginController', LoginController);
 
   /* @ngInject */
-  function LoginController($scope, UserConnexion, $ionicHistory) {
+  function LoginController($scope, UserService, $ionicHistory) {
 
     $scope.user = {};
     $ionicHistory.nextViewOptions({
@@ -25,7 +25,7 @@
 
 
     $scope.login = function (user) {
-      UserConnexion.userLogin(user.username, user.password);
+      UserService.userLogin(user.username, user.password);
     };
   }
 

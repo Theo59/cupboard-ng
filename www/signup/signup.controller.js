@@ -9,7 +9,7 @@
     .controller('SignupController', SignupController);
 
   /* @ngInject */
-  function SignupController($scope, UserConnexion) {
+  function SignupController($scope, UserService) {
 
     $scope.user = {};
     $scope.$watchGroup(['user.username','user.fn','user.ln','user.email','user.password'], function (newVal) {
@@ -27,7 +27,7 @@
     });
 
     $scope.signup = function (user) {
-      UserConnexion.userSignup(user.username, user.fn, user.ln, user.email, user.password);
+      UserService.userSignup(user.username, user.fn, user.ln, user.email, user.password);
     };
   }
 

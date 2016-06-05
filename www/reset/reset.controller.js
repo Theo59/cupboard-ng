@@ -9,7 +9,7 @@
     .controller('ResetController', ResetController);
 
   /* @ngInject */
-  function ResetController($scope, UserConnexion) {
+  function ResetController($scope, UserService) {
 
     $scope.user = {};
     $scope.$watch('user.email', function (newVal) {
@@ -19,7 +19,7 @@
 
 
     $scope.reset = function (email) {
-      UserConnexion.userReset(email);
+      UserService.userReset(email);
     };
   }
 

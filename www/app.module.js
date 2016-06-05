@@ -6,7 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular
-  .module('cupboard-ng', ['ionic', 'cupboard-ng.services'])
+  .module('cupboard-ng', ['ionic'])
 
 .run(function($ionicPlatform) {
 
