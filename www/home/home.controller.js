@@ -9,7 +9,7 @@
     .controller('HomeController', HomeController);
 
   /* @ngInject */
-  function HomeController($scope, UserService) {
+  function HomeController($scope, ClotheService) {
 
     $scope.users = [];
     $scope.saveUser = saveUser;
@@ -18,20 +18,11 @@
     activate();
 
     function activate() {
-      getUser();
+      getClothe();
     }
 
-    function getUser() {
-      var query = new Parse.Query('users');
-      query.find({
-        success: function(results) {
-          $scope.users = results;
-        },
-
-        error: function(error) {
-          alert("Fail");
-        }
-      });
+    function getClothe() {
+      ClotheService.getClothes();
     }
 
     function saveUser(userName){
