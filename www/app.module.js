@@ -8,10 +8,17 @@
 angular
   .module('cupboard-ng', ['ionic', 'ngCordova'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $state) {
 
     Parse.initialize("CUPBOARD001");// MOVED OUT OF 'ready'
     Parse.serverURL = 'https://api.hugo-garbez.fr';
+
+    var currentUser = Parse.User.current();
+    if (currentUser) {
+      $state.go('menu.home');
+    } else {
+      $state.go('login');
+    }
 
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

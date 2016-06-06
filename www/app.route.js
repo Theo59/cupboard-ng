@@ -18,8 +18,8 @@
         abstract:true
       });
 
-    $urlRouterProvider
-      .otherwise('login');
+    //$urlRouterProvider
+    //  .otherwise('login');
 
   }
 

@@ -82,6 +82,7 @@
 
         Parse.User.logOut().then(function() {
           $state.go('login');
+          var currentUser = {};
         });
 
       };
