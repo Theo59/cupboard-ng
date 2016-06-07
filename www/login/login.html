@@ -1,60 +1,144 @@
 <style>
-.button-clear {
-  color:#e8e8e8;
-}
-
-.button-twitter {
-  background-color: #55acee;
-}
-
-.button-facebook {
-  background-color: #3b5998;
+/* Webfont: Lato-Regular */
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/Lato-Regular.eot'); /* IE9 Compat Modes */
+    src: url('fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('fonts/Lato-Regular.woff2') format('woff2'), /* Modern Browsers */
+    url('fonts/Lato-Regular.woff') format('woff'), /* Modern Browsers */
+    url('fonts/Lato-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
 }
 
 .button-clear.button-clear {
-  color:#81858d;
+  color:#fff;
+  /*color:#81858d;*/
   font-size:12px;
   font-weight: bold;
 }
 
+.icon {
+  color:#FFF;
+}
+
+.background-text {
+  font-family: 'Lato';
+  font-size: 12px;
+  width: 100%;
+}
+
+.pane {
+  background: #5C258D;
+  background: -webkit-linear-gradient(-35deg, #EF629F , #EECDA3);
+  background: linear-gradient(-35deg, #EF629F , #EECDA3);
+  color:#fff;
+}
+
+.item {
+  background-color:transparent;
+  color:#FFF;
+}
+
+.header-title h1 {
+  font-family: 'Lato';
+	font-size: 72px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+  color:#FFF;
+	/*line-height: 26.4px;*/
+}
+
+.header-title p {
+  font-family: 'Lato';
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+  color:#FFF;
+	/*line-height: 26.4px;*/
+}
+
+.button.button-calm {
+  background-color: #FFF;
+  color:#EF629F;
+  /*opacity: 0.9;*/
+}
+
+*::-webkit-input-placeholder {
+  color:#FFF !important;
+}
+
+
+.all-page {
+  display: flex;
+  flex-direction: column;
+  /*justify-content: space-between;*/
+  height: 100%;
+}
+.content-center {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.header-center {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.pane .scroll-content .padding {
+    height:100%;
+}
+
+.scroll-content {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 </style>
 
 
 <ion-view title="Log In">
-  <ion-nav-bar class="bar-assertive">
-      <!-- <ion-nav-back-button></ion-nav-back-button> -->
-  </ion-nav-bar>
-    <ion-content padding="true" class="background-text">
+  <!-- <ion-nav-bar class="has-header">
+      <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar> -->
+    <ion-content padding="true" scroll="false">
 
-        <ion-list>
-            <p>Connexion avec un compte existant :</p>
-            <label class="item item-input">
-              <i class="icon ion-person placeholder-icon" style="font-size: 32px;width:32px;"></i>
-              <input type="text" placeholder="Username" id="username" ng-model="user.username">
-            </label>
-            <label class="item item-input">
-              <i class="icon ion-ios-locked-outline placeholder-icon" style="font-size: 32px;width:32px;"></i>
-              <input type="password" placeholder="Password" id="password" ng-model="user.password">
-            </label>
-            <button class="button button-block button-calm" ng-click="login(user)" ng-disabled="!ready">Sign In</button>
+      <div class="all-page">
+        <div class="header-center">
+          <div class="header-title">
+            <h1>Hello.</h1>
+            <p>Nice to meet you.</p>
+          </div>
+        </div>
 
-            <hr>
+        <div class="content-center">
+          <ion-list class="background-text" scroll="false">
+              <label class="item item-input">
+                <i class="icon ion-person placeholder-icon" style="font-size: 32px;width:32px;"></i>
+                <input type="text" placeholder="Username" id="username" ng-model="user.username">
+              </label>
+              <label class="item item-input">
+                <i class="icon ion-ios-locked-outline placeholder-icon" style="font-size: 32px;width:32px;"></i>
+                <input type="password" placeholder="Password" id="password" ng-model="user.password">
+              </label>
+              <button class="button button-block button-calm" ng-click="login(user)" ng-disabled="!ready">Sign In</button>
 
-            <button class="button button-block button-facebook" ng-click="fbLogin()">
-            Connexion avec Facebook
-            </button>
-            <button class="button button-block button-twitter ">
-            Connexion avec Twitter
-            </button>
-
-            <div class="row footer-login">
-              <div class="col">
-                <button class="button button-block button-clear button-footer" id="forgot-button" ui-sref="reset">Forgot password ?</button>
+              <div class="row footer-login">
+                <div class="col">
+                  <button class="button button-block button-clear button-footer" id="forgot-button" ui-sref="reset">Forgot password ?</button>
+                </div>
+                <div class="col">
+                  <button class="button button-block button-clear button-footer" id="forgot-button" ui-sref="signup">New here? Sign Up</button>
+                </div>
               </div>
-              <div class="col">
-                <button class="button button-block button-clear button-footer" id="forgot-button" ui-sref="signup">New here? Sign Up</button>
-              </div>
-            </div>
-        </ion-list>
+          </ion-list>
+        </div>
+      </div>
     </ion-content>
 </ion-view>
