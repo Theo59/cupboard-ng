@@ -45,10 +45,10 @@
         var user = Parse.User.current();
         var Clothe = Parse.Object.extend("Clothe");
         var query = new Parse.Query(Clothe);
-        query.equalTo("user.objectId", user.objectId);
+        query.equalTo("user", user);
         query.find({
           success: function(results) {
-            // alert("Successfully retrieved " + results.length + " clothe.");
+            alert("Successfully retrieved " + results.length + " clothes.");
             // Do something with the returned Parse.Object values
             //for (var i = 0; i < results.length; i++) {
             //  var object = results[i];
