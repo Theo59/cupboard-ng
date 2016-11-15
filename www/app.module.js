@@ -10,7 +10,7 @@ angular
 
 .run(function($ionicPlatform, $state) {
 
-    Parse.initialize("CUPBOARD1");// MOVED OUT OF 'ready'
+    Parse.initialize('CUPBOARD1', 'soliekees9caepaimeX6eev8');// MOVED OUT OF 'ready'
     Parse.serverURL = 'http://149.202.174.91:1337/parse';
 
     var currentUser = Parse.User.current();

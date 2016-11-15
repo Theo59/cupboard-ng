@@ -13,8 +13,7 @@
 
     $scope.users = [];
     $scope.saveUser = saveUser;
-
-
+    
     activate();
 
     function activate() {
