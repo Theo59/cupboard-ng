@@ -9,19 +9,30 @@
     .controller('HomeController', HomeController);
 
   /* @ngInject */
-  function HomeController($scope, ClotheService) {
+  function HomeController($scope, ClotheService, CategorieService) {
 
+    $scope.categories = [];
     $scope.users = [];
     $scope.saveUser = saveUser;
 
     activate();
 
     function activate() {
-      getClothe();
+       getCategories();
     }
 
     function getClothe() {
       // ClotheService.getClothes();
+    }
+
+    // function getCategories() {
+    //   CategorieService.getCategories().then(function (data) {
+    //     $scope.categories = data;
+    //   });
+    // }
+
+    function getCategories() {
+      $scope.categories = CategorieService.getCategories();
     }
 
     function saveUser(userName){

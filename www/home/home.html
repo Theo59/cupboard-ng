@@ -62,6 +62,18 @@
         </a>
       </div>
 
+      <div class="list" ng-repeat="categorie in categories._result[0]">
+        <div class="item item-divider">
+          {{ categorie.get('name') }}
+        </div>
+
+        <div ng-repeat="subcategorie in categorie.get('subcategories')">
+          <a class="item" href="#">
+            {{ subcategorie }}
+          </a>
+        </div>
+      </div>
+
     </ion-content>
 
     <ion-footer-bar align-title="left" class="bar-royal">
