@@ -11,10 +11,10 @@
   /* @ngInject */
   function RouteConfiguration ($stateProvider) {
     $stateProvider
-      .state('menu.add-clothe', {
+      .state('tabs.add-clothe', {
         url: '/add-clothe',
         views: {
-          'home': {
+          'tabs-news-feed': {
             templateUrl: 'addClothe/addClothe.html',
             controller: 'AddClotheController'
           }

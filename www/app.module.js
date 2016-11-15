@@ -15,7 +15,7 @@ angular
 
     var currentUser = Parse.User.current();
     if (currentUser) {
-      $state.go('menu.home');
+      $state.go('tab.news-feed');
     } else {
       $state.go('login');
     }

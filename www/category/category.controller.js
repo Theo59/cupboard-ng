@@ -6,10 +6,10 @@
 
   angular
     .module('cupboard-ng')
-    .controller('ClothesController', ClothesController);
+    .controller('CategoryController', CategoryController);
 
   /* @ngInject */
-  function ClothesController($scope) {
+  function CategoryController($scope) {
     $scope.clothes = [
         {
             "id": 1,

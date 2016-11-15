@@ -6,10 +6,10 @@
 
   angular
     .module('cupboard-ng')
-    .controller('HomeController', HomeController);
+    .controller('NewsFeedController', NewsFeedController);
 
   /* @ngInject */
-  function HomeController($scope, ClotheService, CategorieService) {
+  function NewsFeedController($scope, ClotheService, CategorieService) {
 
     $scope.categories = [];
     $scope.users = [];

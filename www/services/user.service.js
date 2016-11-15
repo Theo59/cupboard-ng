@@ -21,7 +21,7 @@
 
         user.signUp(null, {
           success: function(user) {
-            $state.go('menu.home');
+            $state.go('tab.news-feed');
           },
           error: function(user, error) {
             $ionicPopup.alert({
@@ -42,7 +42,7 @@
         Parse.User.logIn(username, password, {
           success: function(user) {
             $ionicLoading.hide();
-            $state.go('menu.home');
+            $state.go('tab.news-feed');
           },
           error: function(user, error) {
             $ionicLoading.hide();

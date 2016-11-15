@@ -13,27 +13,41 @@
       clotheService.save = save;
       clotheService.getClothes = getClothes;
 
-      function save(newClothe){
+      function save(newClothe, pictureTaken){
         var user = Parse.User.current();
 
         var Clothe = Parse.Object.extend("Clothe");
         var clothe = new Clothe();
 
-        var file = document.getElementById("clothePicture");
-        var name = "photo.jpg";
+        if (pictureTaken) {
+          var fileUploadControl = document.getElementById("clothePicture")[0];
+          if (fileUploadControl.files.length > 0) {
+            var file = fileUploadControl.files[0];
+            var name = "photo.png";
 
-        var parseFile = new Parse.File(name, file);
+            var parseFile = new Parse.File(name, file);
+          }
 
-        parseFile.save().then(function() {
+          parseFile.save().then(function(response) {
+            console.log('saving file: ' + ' ' + response.data);
+          }, function(error) {
+            // The file either could not be read, or could not be saved to Parse.
+          });
+
+        }
+
+        clothe.save().then(function() {
           clothe.set("name", newClothe.name);
           clothe.set("brandt", newClothe.brandt);
           clothe.set("color", newClothe.color);
           clothe.set("size", newClothe.size);
           clothe.set("categorie", newClothe.categorie);
           clothe.set("subCategorie", newClothe.subcategorie);
-          clothe.set("pictureUrl", newClothe.pictureUrl);
+          // clothe.set("pictureUrl", newClothe.pictureUrl);
           clothe.set("user", user);
-          clothe.set("picture", parseFile);
+          if (pictureTaken) {
+            clothe.set("picture", parseFile);
+          }
 
           clothe.save(null, {
             success: function(newClothe) {

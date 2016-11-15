@@ -12,14 +12,14 @@
   function RouteConfiguration ($urlRouterProvider, $stateProvider) {
 
     $stateProvider
-      .state('menu', {
-        url: '/home',
-        templateUrl: 'templates/menu.html',
-        abstract:true
+      .state('tab', {
+        url: '/tab',
+        abstract: true,
+        templateUrl: 'templates/footer.html'
       });
 
-    //$urlRouterProvider
-    //  .otherwise('login');
+    $urlRouterProvider
+     .otherwise('login');
 
   }
 

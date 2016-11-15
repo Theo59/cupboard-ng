@@ -11,16 +11,15 @@
   /* @ngInject */
   function RouteConfiguration ($stateProvider) {
     $stateProvider
-      .state('tab.cupboard', {
-        url: '/cupboard',
+      .state('tabs.category', {
+        url: '/cupboard/:categoryId',
         views: {
           'tab-cupboard': {
-            templateUrl: 'cupboard/cupboard.html',
-            controller: 'CupboardController'
+            templateUrl: 'category/category.html',
+            controller: 'CategoryController'
           }
         }
       })
-
   }
 
 })();

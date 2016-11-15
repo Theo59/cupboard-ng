@@ -14,6 +14,8 @@
     $scope.takePicture = takePicture;
     $scope.saveClothe = saveClothe;
 
+    $scope.pictureTaken = false;
+
     function takePicture() {
       var options = {
         quality: 75,
@@ -32,10 +34,12 @@
       }, function (err) {
         // An error occured. Show a message to the user
       });
+
+      $scope.pictureTaken = true;
     }
 
     function saveClothe(clothe) {
-      ClotheService.save(clothe);
+      ClotheService.save(clothe, $scope.pictureTaken);
     }
   }
 
