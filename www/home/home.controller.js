@@ -13,7 +13,7 @@
 
     $scope.users = [];
     $scope.saveUser = saveUser;
-    
+
     activate();
 
     function activate() {
@@ -21,7 +21,7 @@
     }
 
     function getClothe() {
-      ClotheService.getClothes();
+      // ClotheService.getClothes();
     }
 
     function saveUser(userName){
