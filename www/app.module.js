@@ -10,8 +10,8 @@ angular
 
 .run(function($ionicPlatform, $state) {
 
-    Parse.initialize("CUPBOARD001");// MOVED OUT OF 'ready'
-    Parse.serverURL = 'https://api.hugo-garbez.fr';
+    Parse.initialize("CUPBOARD1");// MOVED OUT OF 'ready'
+    Parse.serverURL = 'http://149.202.174.91:1337/parse';
 
     var currentUser = Parse.User.current();
     if (currentUser) {

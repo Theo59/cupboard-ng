@@ -48,53 +48,41 @@
       }
     </style>
 
+    <script src="app.module.js"></script>
+    <script src="app.route.js"></script>
 
+    <!-- Controllers -->
+    <script src="home/home.controller.js"></script>
+    <script src="login/login.controller.js"></script>
+    <script src="reset/reset.controller.js"></script>
+    <script src="signup/signup.controller.js"></script>
+    <script src="cupboard/cupboard.controller.js"></script>
+    <script src="looks/looks.controller.js"></script>
+    <script src="clothe/clothe.controller.js"></script>
+    <script src="clothes/clothes.controller.js"></script>
+    <script src="logout/logout.controller.js"></script>
+    <script src="addClothe/addClothe.controller.js"></script>
 
+    <!-- Services -->
+    <script src="services/user.service.js"></script>
+    <script src="addClothe/camera.service.js"></script>
+    <script src="services/clothe.service.js"></script>
+
+    <!-- Routes -->
+    <script src="signup/signup.route.js"></script>
+    <script src="clothes/clothes.route.js"></script>
+    <script src="clothe/clothe.route.js"></script>
+    <script src="looks/looks.route.js"></script>
+    <script src="cupboard/cupboard.route.js"></script>
+    <script src="login/login.route.js"></script>
+    <script src="reset/reset.route.js"></script>
+    <script src="home/home.route.js"></script>
+    <script src="logout/logout.route.js"></script>
+    <script src="addClothe/addClothe.route.js"></script>
   </head>
-  <body ng-app="cupboard-ng" animation="slide-left-right-ios7">
-  <div>
-    <div>
-        <ion-nav-view></ion-nav-view>
-    </div>
-</div>
+  <!-- <body ng-app="cupboard-ng" animation="slide-left-right-ios7"> -->
 
-
-
-  <script src="app.module.js"></script>
-  <script src="app.route.js"></script>
-
-  <!-- Controllers -->
-  <script src="home/home.controller.js"></script>
-  <script src="login/login.controller.js"></script>
-  <script src="reset/reset.controller.js"></script>
-  <script src="signup/signup.controller.js"></script>
-  <script src="cupboard/cupboard.controller.js"></script>
-  <script src="looks/looks.controller.js"></script>
-  <script src="clothe/clothe.controller.js"></script>
-  <script src="clothes/clothes.controller.js"></script>
-  <script src="logout/logout.controller.js"></script>
-  <script src="addClothe/addClothe.controller.js"></script>
-
-  <!-- Services -->
-  <script src="services/user.service.js"></script>
-  <script src="addClothe/camera.service.js"></script>
-  <script src="services/clothe.service.js"></script>
-
-  <!-- Routes -->
-  <script src="signup/signup.route.js"></script>
-  <script src="clothes/clothes.route.js"></script>
-  <script src="clothe/clothe.route.js"></script>
-  <script src="looks/looks.route.js"></script>
-  <script src="cupboard/cupboard.route.js"></script>
-  <script src="login/login.route.js"></script>
-  <script src="reset/reset.route.js"></script>
-  <script src="home/home.route.js"></script>
-  <script src="logout/logout.route.js"></script>
-  <script src="addClothe/addClothe.route.js"></script>
-
-
-  <!-- Only required for Tab projects w/ pages in multiple tabs
-  <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
-  -->
+  <body ng-app="cupboard-ng">
+    <ion-nav-view></ion-nav-view>
   </body>
 </html>

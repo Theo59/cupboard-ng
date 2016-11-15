@@ -68,25 +68,6 @@
             "picture": [
                 "http://photos6.shoes.fr/photos/817/817124/817124_350_A.jpg"
             ]
-        },
-        {
-            "id": 4,
-            "name": "Robe Ralph Lauren",
-            "categories": [
-                "Robe"
-            ],
-            "subcategories": [
-                "Robe courte"
-            ],
-            "marque": "Ralph Lauren",
-            "colors": [
-                "bleu",
-                "blanc"
-            ],
-            "size": "38",
-            "picture": [
-                "http://www.venisedresscode.com/ekmps/shops/0814c8/images/polo-robe-ralph-lauren-[3]-1064-p.jpg"
-            ]
         }
     ]
 

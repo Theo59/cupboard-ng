@@ -60,7 +60,7 @@
         query.equalTo("user", user);
         query.find({
           success: function(results) {
-            alert("Successfully retrieved " + results.length + " clothes.");
+            // alert("Successfully retrieved " + results.length + " clothes.");
             // Do something with the returned Parse.Object values
             //for (var i = 0; i < results.length; i++) {
             //  var object = results[i];

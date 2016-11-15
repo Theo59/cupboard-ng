@@ -11,10 +11,19 @@
   /* @ngInject */
   function RouteConfiguration ($stateProvider) {
     $stateProvider
-      .state('add-clothe', {
-        url: '/add-clothe',
-        templateUrl: 'addClothe/addClothe.html',
-        controller: 'AddClotheController'
+      // .state('add-clothe', {
+      //   url: '/add-clothe',
+      //   templateUrl: 'addClothe/addClothe.html',
+      //   controller: 'AddClotheController'
+      // })
+      .state('menu.add-clothe', {
+        url: '/garderobe/add-clothe',
+        views: {
+          'home': {
+            templateUrl: 'addClothe/addClothe.html',
+            controller: 'AddClotheController'
+          }
+        }
       })
   }
 
