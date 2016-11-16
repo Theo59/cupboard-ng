@@ -15,20 +15,16 @@
         var data = [];
         var Categorie = Parse.Object.extend("Categorie");
         var query = new Parse.Query(Categorie);
-        var result = query.find({
+        query.find({
           success: function(results) {
             console.log(results);
-            for (var i = 0; i < results.length; i++) {
-              var object = results[i];
-              data[i] = object.get('name');
-            }
+            return results;
           },
           error: function(error) {
             alert("Error: " + error.code + " " + error.message);
           }
         });
 
-        return result;
       }
 
       return categorieService;

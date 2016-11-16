@@ -1,79 +1,79 @@
-<ion-view title="Dernieres annonces" class="">
-    <ion-content padding="true" class="has-header">
+<ion-view view-title="Dernieres annonces" class="">
+  <ion-content padding="true" class="has-header">
 
-      <center>
-        <a class="tab-item" ui-sref="menu.add-clothe">
-          <i class="icon ion-ios-plus"></i>
-          Ajouter un produit
-        </a>
-      </center>
+    <center>
+      <a class="tab-item" ui-sref="tab.add-clothe">
+        <i class="icon ion-ios-plus"></i>
+        Ajouter un produit
+      </a>
+    </center>
 
-      <!-- UN PRODUIT -->
-      <div class="list card">
-        <div class="item item-avatar">
-          <img src="http://91.68.209.12/bmi/image.flaticon.com/icons/svg/145/145862.svg">
-          <h2>Marie Dupond</h2>
-          <p>Robe Tommy Hilfiger</p>
-        </div>
-
-        <div class="item item-image">
-          <img src="https://s-media-cache-ak0.pinimg.com/236x/0d/49/53/0d49535360f0d3f64834d8a69db7343f.jpg">
-        </div>
-
-        <a class="item item-icon-left assertive" href="#">
-          <i class="icon ion-ios-eye"></i>
-          Voir le produit
-        </a>
+    <!-- UN PRODUIT -->
+    <div class="list card">
+      <div class="item item-avatar">
+        <img src="http://91.68.209.12/bmi/image.flaticon.com/icons/svg/145/145862.svg">
+        <h2>Marie Dupond</h2>
+        <p>Robe Tommy Hilfiger</p>
       </div>
 
-      <!-- UN PRODUIT -->
-      <div class="list card">
-        <div class="item item-avatar">
-          <img src="http://91.68.209.12/bmi/image.flaticon.com/icons/svg/145/145862.svg">
-          <h2>Marie Dupond</h2>
-          <p>Robe Tommy Hilfiger</p>
-        </div>
+      <div class="item item-image">
+        <img src="https://s-media-cache-ak0.pinimg.com/236x/0d/49/53/0d49535360f0d3f64834d8a69db7343f.jpg">
+      </div>
 
-        <div class="item item-image">
-          <img src="https://s-media-cache-ak0.pinimg.com/236x/0d/49/53/0d49535360f0d3f64834d8a69db7343f.jpg">
-        </div>
+      <a class="item item-icon-left assertive" href="#">
+        <i class="icon ion-ios-eye"></i>
+        Voir le produit
+      </a>
+    </div>
 
-        <a class="item item-icon-left assertive" href="#">
-          <i class="icon ion-ios-eye"></i>
-          Voir le produit
+    <!-- UN PRODUIT -->
+    <div class="list card">
+      <div class="item item-avatar">
+        <img src="http://91.68.209.12/bmi/image.flaticon.com/icons/svg/145/145862.svg">
+        <h2>Marie Dupond</h2>
+        <p>Robe Tommy Hilfiger</p>
+      </div>
+
+      <div class="item item-image">
+        <img src="https://s-media-cache-ak0.pinimg.com/236x/0d/49/53/0d49535360f0d3f64834d8a69db7343f.jpg">
+      </div>
+
+      <a class="item item-icon-left assertive" href="#">
+        <i class="icon ion-ios-eye"></i>
+        Voir le produit
+      </a>
+    </div>
+
+    <!-- UN PRODUIT -->
+    <div class="list card">
+      <div class="item item-avatar">
+        <img src="http://91.68.209.12/bmi/image.flaticon.com/icons/svg/145/145862.svg">
+        <h2>Marie Dupond</h2>
+        <p>Robe Tommy Hilfiger</p>
+      </div>
+
+      <div class="item item-image">
+        <img src="https://s-media-cache-ak0.pinimg.com/236x/0d/49/53/0d49535360f0d3f64834d8a69db7343f.jpg">
+      </div>
+
+      <a class="item item-icon-left assertive" href="#">
+        <i class="icon ion-ios-eye"></i>
+        Voir le produit
+      </a>
+    </div>
+
+    <div class="list" ng-repeat="categorie in categories._result[0]">
+      <div class="item item-divider">
+        {{ categorie.get('name') }}
+      </div>
+
+      <div ng-repeat="subcategorie in categorie.get('subcategories')">
+        <a class="item" href="#">
+          {{ subcategorie }}
         </a>
       </div>
+    </div>
 
-      <!-- UN PRODUIT -->
-      <div class="list card">
-        <div class="item item-avatar">
-          <img src="http://91.68.209.12/bmi/image.flaticon.com/icons/svg/145/145862.svg">
-          <h2>Marie Dupond</h2>
-          <p>Robe Tommy Hilfiger</p>
-        </div>
-
-        <div class="item item-image">
-          <img src="https://s-media-cache-ak0.pinimg.com/236x/0d/49/53/0d49535360f0d3f64834d8a69db7343f.jpg">
-        </div>
-
-        <a class="item item-icon-left assertive" href="#">
-          <i class="icon ion-ios-eye"></i>
-          Voir le produit
-        </a>
-      </div>
-
-      <div class="list" ng-repeat="categorie in categories._result[0]">
-        <div class="item item-divider">
-          {{ categorie.get('name') }}
-        </div>
-
-        <div ng-repeat="subcategorie in categorie.get('subcategories')">
-          <a class="item" href="#">
-            {{ subcategorie }}
-          </a>
-        </div>
-      </div>
-
-    </ion-content>
+  </ion-content>
 
 </ion-view>

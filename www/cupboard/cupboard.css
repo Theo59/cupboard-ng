@@ -1,0 +1,12 @@
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.categorie-card {
+  margin: 5px 5px 5px 5px !important;
+  height: 100px;
+  min-width: 100px;
+}
+
