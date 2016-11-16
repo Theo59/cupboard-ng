@@ -25,7 +25,12 @@
       query.find({
         success: function(results) {
           console.log(results);
-          $scope.categories = results;
+          angular.forEach(results, function(result) {
+            $scope.categories.push({
+              name: result.get('name'),
+              subcategories: result.get('subcategories')
+            });
+          });
         },
         error: function(error) {
           alert("Error: " + error.code + " " + error.message);

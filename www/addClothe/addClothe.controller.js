@@ -9,7 +9,7 @@
     .controller('AddClotheController', AddClotheController);
 
   /* @ngInject */
-  function AddClotheController($scope, $cordovaCamera, ClotheService, CategorieService) {
+  function AddClotheController($scope, $cordovaCamera, ClotheService, $state) {
 
     $scope.takePicture = takePicture;
     $scope.saveClothe = saveClothe;
@@ -18,7 +18,22 @@
     getCategories();
 
     function getCategories() {
-      $scope.categories = CategorieService.getCategories();
+      var Categorie = Parse.Object.extend("Categorie");
+      var query = new Parse.Query(Categorie);
+      query.find({
+        success: function(results) {
+          console.log(results);
+          angular.forEach(results, function(result) {
+            $scope.categories.push({
+              name: result.get('name'),
+              subcategories: result.get('subcategories')
+            });
+          });
+        },
+        error: function(error) {
+          alert("Error: " + error.code + " " + error.message);
+        }
+      });
     }
 
     $scope.pictureTaken = false;
@@ -47,6 +62,7 @@
 
     function saveClothe(clothe) {
       ClotheService.save(clothe, $scope.pictureTaken);
+      $state.go('tab.cupboard');
     }
   }
 

@@ -27,14 +27,12 @@
       </label>
       <label class="item item-input item-select">
         <span class="input-label">Categorie</span>
-        <select ng-model="selectedItem">
-          <option ng-repeat="categorie in categories._result[0]" value="{{ categorie.get('name') }}" name="clothe-categorie" id="clothe-categorie">{{ categorie.get('name') }}</option>
-        </select>
+        <select ng-model="clothe.selectedCat" ng-options="categorie.name for categorie in categories"></select>
       </label>
       <label class="item item-input item-select" >
         <span class="input-label">Sous-Categorie</span>
-        <select ng-model="selectedItem">
-          <option ng-repeat="subcategorie in categorie.get('subcategories')" value="{{ subcategorie }}" name="clothe-subcategorie" id="clothe-subcategorie">{{ subcategorie }}</option>
+        <select ng-model="clothe.selectedSubcat">
+          <option ng-repeat="subcategorie in clothe.selectedCat.subcategories" value="{{ subcategorie }}" name="clothe-subcategorie" id="clothe-subcategorie">{{ subcategorie }}</option>
         </select>
       </label>
 

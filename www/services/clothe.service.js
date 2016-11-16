@@ -41,8 +41,8 @@
           clothe.set("brandt", newClothe.brandt);
           clothe.set("color", newClothe.color);
           clothe.set("size", newClothe.size);
-          clothe.set("categorie", newClothe.categorie);
-          clothe.set("subCategorie", newClothe.subcategorie);
+          clothe.set("categorie", newClothe.selectedCat.name);
+          clothe.set("subCategorie", newClothe.selectedSubcat);
           // clothe.set("pictureUrl", newClothe.pictureUrl);
           clothe.set("user", user);
           if (pictureTaken) {
@@ -52,7 +52,7 @@
           clothe.save(null, {
             success: function(newClothe) {
               // Execute any logic that should take place after the object is saved.
-              alert('New object created by user: ' + newClothe.name);
+              alert('New object created by user: ' + newClothe);
             },
             error: function(newClothe, error) {
               // Execute any logic that should take place if the save fails.

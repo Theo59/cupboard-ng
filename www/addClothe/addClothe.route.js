@@ -12,9 +12,9 @@
   function RouteConfiguration ($stateProvider) {
     $stateProvider
       .state('tab.add-clothe', {
-        url: '/add-clothe',
+        url: '/cupboard/add-clothe',
         views: {
-          'tabs-news-feed': {
+          'tab-cupboard': {
             templateUrl: 'addClothe/addClothe.html',
             controller: 'AddClotheController'
           }

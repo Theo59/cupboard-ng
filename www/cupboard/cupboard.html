@@ -1,10 +1,16 @@
 <ion-view view-title="GARDE ROBE" id="page4" class=" ">
     <ion-content padding="true" class="has-header">
+      <center>
+        <a class="tab-item" ui-sref="tab.add-clothe">
+          <i class="icon ion-ios-plus"></i>
+          Ajouter un produit
+        </a>
+      </center>
       <div class="categories-container">
         <div class="card categorie-card" ng-repeat="cat in categories">
           <a class="item item-text-wrap" href="#/tab/cupboard/{{cat.id}}">
             <h1><i class="ion-tshirt-outline"></i></h1>
-            <h2 class="ng-binding">{{ cat.get('name') }}</h2>
+            <h2 class="ng-binding">{{ cat.name }}</h2>
           </a>
         </div>
       </div>
