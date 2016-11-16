@@ -2,10 +2,10 @@
     <ion-content padding="true" class="has-header">
 
       <div class="categories-container">
-        <div class="card categorie-card" ng-repeat="cat in category.get('subCategories')">
-          <a class="item item-text-wrap" ng-href="#/tab/category.id/{{cat.id}}">
+        <div class="card categorie-card" ng-repeat="cat in categorie.subcategories">
+          <a class="item item-text-wrap" ng-href="#/tab/cupboard/{{ categorie.id }}/{{ cat }}">
             <h1><i class="ion-tshirt-outline"></i></h1>
-            <h2 class="ng-binding">{{ cat.get('name') }}</h2>
+            <h2 class="ng-binding">{{ cat }}</h2>
           </a>
         </div>
       </div>
