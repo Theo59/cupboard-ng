@@ -1,89 +1,96 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
 
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
-    <script src="cordova.js"></script>
-    <script src="lib/parse/parse-1.6.14.min.js"></script>
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+  <script src="cordova.js"></script>
+  <script src="lib/parse/parse-1.6.14.min.js"></script>
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+  <link href="css/ionic.app.css" rel="stylesheet">
+  -->
 
-    <link href="css/ionic.app.css" rel="stylesheet">
-    <!-- <link href="css/main.css" rel="stylesheet"> -->
-
-
-    <link href="logout/logout.css" rel="stylesheet">
-    <link href="category/category.css" rel="stylesheet">
+  <link href="css/ionic.app.css" rel="stylesheet">
+  <!-- <link href="css/main.css" rel="stylesheet"> -->
 
 
-    <style type="text/css">
-      .platform-ios .manual-ios-statusbar-padding{
-        padding-top:20px;
-      }
-      .manual-remove-top-padding{
-        padding-top:0;
-      }
-      .manual-remove-top-padding .scroll{
-        padding-top:0 !important;
-      }
-      ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
-        margin-left:-10px;
-        margin-right:-10px;
-      }
-      ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
-        border-radius:0;
-        border-left:0;
-        border-right: 0;
-      }
-      .bar.bar-assertive {
-            background-color: #ff7a6e;
-      }
-    </style>
+  <link href="logout/logout.css" rel="stylesheet">
+  <link href="category/category.css" rel="stylesheet">
+  <link href="cupboard/cupboard.css" rel="stylesheet">
 
-    <script src="app.module.js"></script>
-    <script src="app.route.js"></script>
 
-    <!-- Controllers -->
-    <script src="newsFeed/newsFeed.controller.js"></script>
-    <script src="login/login.controller.js"></script>
-    <script src="reset/reset.controller.js"></script>
-    <script src="signup/signup.controller.js"></script>
-    <script src="cupboard/cupboard.controller.js"></script>
-    <script src="looks/looks.controller.js"></script>
-    <script src="clothe/clothe.controller.js"></script>
-    <script src="category/category.controller.js"></script>
-    <script src="logout/logout.controller.js"></script>
-    <script src="addClothe/addClothe.controller.js"></script>
+  <style type="text/css">
+    .platform-ios .manual-ios-statusbar-padding{
+      padding-top:20px;
+    }
+    .manual-remove-top-padding{
+      padding-top:0;
+    }
+    .manual-remove-top-padding .scroll{
+      padding-top:0 !important;
+    }
+    ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+      margin-left:-10px;
+      margin-right:-10px;
+    }
+    ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+      border-radius:0;
+      border-left:0;
+      border-right: 0;
+    }
+    .bar.bar-assertive {
+      background-color: #ff7a6e;
+    }
+  </style>
 
-    <!-- Services -->
-    <script src="services/user.service.js"></script>
-    <script src="addClothe/camera.service.js"></script>
-    <script src="services/clothe.service.js"></script>
-    <script src="services/categorie.service.js"></script>
+  <script src="app.module.js"></script>
+  <script src="app.route.js"></script>
 
-    <!-- Routes -->
-    <script src="signup/signup.route.js"></script>
-    <script src="category/category.route.js"></script>
-    <script src="clothe/clothe.route.js"></script>
-    <script src="looks/looks.route.js"></script>
-    <script src="cupboard/cupboard.route.js"></script>
-    <script src="login/login.route.js"></script>
-    <script src="reset/reset.route.js"></script>
-    <script src="newsFeed/newsFeed.route.js"></script>
-    <script src="logout/logout.route.js"></script>
-    <script src="addClothe/addClothe.route.js"></script>
-  </head>
-  <!-- <body ng-app="cupboard-ng" animation="slide-left-right-ios7"> -->
+  <!-- Controllers -->
+  <script src="newsFeed/newsFeed.controller.js"></script>
+  <script src="login/login.controller.js"></script>
+  <script src="reset/reset.controller.js"></script>
+  <script src="signup/signup.controller.js"></script>
+  <script src="cupboard/cupboard.controller.js"></script>
+  <script src="looks/looks.controller.js"></script>
+  <script src="clothe/clothe.controller.js"></script>
+  <script src="category/category.controller.js"></script>
+  <script src="logout/logout.controller.js"></script>
+  <script src="addClothe/addClothe.controller.js"></script>
 
-  <body ng-app="cupboard-ng">
-    <ion-nav-view></ion-nav-view>
-  </body>
+  <!-- Services -->
+  <script src="services/user.service.js"></script>
+  <script src="addClothe/camera.service.js"></script>
+  <script src="services/clothe.service.js"></script>
+  <script src="services/categorie.service.js"></script>
+
+  <!-- Routes -->
+  <script src="signup/signup.route.js"></script>
+  <script src="category/category.route.js"></script>
+  <script src="clothe/clothe.route.js"></script>
+  <script src="looks/looks.route.js"></script>
+  <script src="cupboard/cupboard.route.js"></script>
+  <script src="login/login.route.js"></script>
+  <script src="reset/reset.route.js"></script>
+  <script src="newsFeed/newsFeed.route.js"></script>
+  <script src="logout/logout.route.js"></script>
+  <script src="addClothe/addClothe.route.js"></script>
+</head>
+<!-- <body ng-app="cupboard-ng" animation="slide-left-right-ios7"> -->
+
+<body ng-app="cupboard-ng">
+
+<ion-nav-bar class="bar-stable">
+  <ion-nav-back-button>
+  </ion-nav-back-button>
+</ion-nav-bar>
+
+<ion-nav-view></ion-nav-view>
+</body>
 </html>

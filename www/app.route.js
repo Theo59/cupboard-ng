@@ -19,7 +19,7 @@
       });
 
     $urlRouterProvider
-     .otherwise('login');
+     .otherwise('/tab/newsFeed');
 
   }
 

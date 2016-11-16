@@ -11,7 +11,7 @@
   /* @ngInject */
   function RouteConfiguration ($stateProvider) {
     $stateProvider
-      .state('tabs.add-clothe', {
+      .state('tab.add-clothe', {
         url: '/add-clothe',
         views: {
           'tabs-news-feed': {
