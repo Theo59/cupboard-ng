@@ -9,10 +9,17 @@
     .controller('AddClotheController', AddClotheController);
 
   /* @ngInject */
-  function AddClotheController($scope, $cordovaCamera, ClotheService) {
+  function AddClotheController($scope, $cordovaCamera, ClotheService, CategorieService) {
 
     $scope.takePicture = takePicture;
     $scope.saveClothe = saveClothe;
+    $scope.categories = [];
+
+    getCategories();
+
+    function getCategories() {
+      $scope.categories = CategorieService.getCategories();
+    }
 
     $scope.pictureTaken = false;
 

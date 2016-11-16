@@ -1,37 +1,43 @@
 <ion-view title="Ajout d'un vetement">
 
   <ion-content padding="true" class="has-header">
-    
+
     <center style="margin-top:10px;margin-bottom:10px;">
       <img id="clothePicture" ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
       <img ng-show="imgURI === undefined" ng-src="https://placeholdit.imgix.net/~text?txtsize=28&txt=300%C3%97300&w=300&h=300">
       <button class="button" ng-click="takePicture()">Take Picture</button>
     </center>
+
     <div class="list">
-      <label class="item item-input item-floating-label">
+      <label class="item item-input item-label">
         <span class="input-label">Nom</span>
         <input type="text" placeholder="Name" ng-model="clothe.name">
       </label>
-      <label class="item item-input item-floating-label">
+      <label class="item item-input item-label">
         <span class="input-label">Marque</span>
         <input type="text" placeholder="Brandt" ng-model="clothe.brandt">
       </label>
-      <label class="item item-input item-floating-label">
+      <label class="item item-input item-label">
         <span class="input-label">Coleur</span>
         <input type="text" placeholder="Color" ng-model="clothe.color">
       </label>
-      <label class="item item-input item-floating-label">
+      <label class="item item-input item-label">
         <span class="input-label">Taille</span>
         <input type="text" placeholder="Size" ng-model="clothe.size">
       </label>
-      <label class="item item-input item-floating-label">
+      <label class="item item-input item-select">
         <span class="input-label">Categorie</span>
-        <input type="text" placeholder="Categorie" ng-model="clothe.categorie">
+        <select ng-model="selectedItem">
+          <option ng-repeat="categorie in categories._result[0]" value="{{ categorie.get('name') }}" name="clothe-categorie" id="clothe-categorie">{{ categorie.get('name') }}</option>
+        </select>
       </label>
-      <label class="item item-input item-floating-label">
+      <label class="item item-input item-select" >
         <span class="input-label">Sous-Categorie</span>
-        <input type="text" placeholder="Sub Categorie" ng-model="clothe.subCategorie">
+        <select ng-model="selectedItem">
+          <option ng-repeat="subcategorie in categorie.get('subcategories')" value="{{ subcategorie }}" name="clothe-subcategorie" id="clothe-subcategorie">{{ subcategorie }}</option>
+        </select>
       </label>
+
     </div>
     <div class="text-align:right">
       <button class="button pull-right" ng-click="saveClothe(clothe)">Ajouter</button>
