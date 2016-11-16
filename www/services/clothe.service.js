@@ -13,28 +13,27 @@
       clotheService.save = save;
       clotheService.getClothes = getClothes;
 
-      function save(newClothe, pictureTaken){
+      function save(newClothe, uri){
+
         var user = Parse.User.current();
 
         var Clothe = Parse.Object.extend("Clothe");
         var clothe = new Clothe();
 
-        if (pictureTaken) {
-          var fileUploadControl = document.getElementById("clothePicture")[0];
-          if (fileUploadControl.files.length > 0) {
-            var file = fileUploadControl.files[0];
-            var name = "photo.png";
+        // alert(uri);
+        var file = {base64:uri};
+        var name = "photo.png";
 
-            var parseFile = new Parse.File(name, file);
-          }
+        var parseFile = new Parse.File(name, file);
 
-          parseFile.save().then(function(response) {
-            console.log('saving file: ' + ' ' + response.data);
-          }, function(error) {
-            // The file either could not be read, or could not be saved to Parse.
-          });
 
-        }
+        // alert(parseFile);
+
+        parseFile.save().then(function(response) {
+          alert('saving file: ' + ' ' + response);
+        }, function(error) {
+          alert("Erreur lors de l'insert");
+        });
 
         clothe.save().then(function() {
           clothe.set("name", newClothe.name);
@@ -43,16 +42,13 @@
           clothe.set("size", newClothe.size);
           clothe.set("categorie", newClothe.selectedCat.name);
           clothe.set("subCategorie", newClothe.selectedSubcat);
-          // clothe.set("pictureUrl", newClothe.pictureUrl);
           clothe.set("user", user);
-          if (pictureTaken) {
-            clothe.set("picture", parseFile);
-          }
+          clothe.set("picture", parseFile);
 
           clothe.save(null, {
             success: function(newClothe) {
               // Execute any logic that should take place after the object is saved.
-              alert('New object created by user: ' + newClothe);
+              // alert('New object created by user: ' + newClothe);
             },
             error: function(newClothe, error) {
               // Execute any logic that should take place if the save fails.

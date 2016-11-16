@@ -13,11 +13,7 @@
 
     $scope.categories = [];
 
-    activate();
-
-    function activate() {
-      getCategories();
-    }
+    getCategories();
 
     function getCategories() {
       var Categorie = Parse.Object.extend("Categorie");

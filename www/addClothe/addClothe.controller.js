@@ -15,6 +15,8 @@
     $scope.saveClothe = saveClothe;
     $scope.categories = [];
 
+    var imageData = '';
+
     getCategories();
 
     function getCategories() {
@@ -51,8 +53,9 @@
         saveToPhotoAlbum: true
       };
 
-      $cordovaCamera.getPicture(options).then(function (imageData) {
-        $scope.imgURI = "data:image/jpeg;base64," + imageData;
+      $cordovaCamera.getPicture(options).then(function (ResponseImageData) {
+        imageData = ResponseImageData;
+        $scope.imgURI = "data:image/jpeg;base64," + ResponseImageData;
       }, function (err) {
         // An error occured. Show a message to the user
       });
@@ -61,8 +64,8 @@
     }
 
     function saveClothe(clothe) {
-      ClotheService.save(clothe, $scope.pictureTaken);
-      $state.go('tab.cupboard');
+      ClotheService.save(clothe, imageData);
+
     }
   }
 
