@@ -10,6 +10,7 @@
 
   /* @ngInject */
   function CategoryController($scope, $stateParams) {
+    $scope.categorie= {};
 
     activate();
 
@@ -21,8 +22,11 @@
       var Categorie = Parse.Object.extend("Categorie");
       var query = new Parse.Query(Categorie);
       query.get($stateParams.categoryId, {
-        success: function(results) {
-          $scope.category = results;
+        success: function(result) {
+          $scope.categorie = {
+            id: result.id,
+            subcategories: result.get('subcategories')
+          }
         },
         error: function(error) {
           alert("Error: " + error.code + " " + error.message);

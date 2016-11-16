@@ -23,6 +23,7 @@
           console.log(results);
           angular.forEach(results, function(result) {
             $scope.categories.push({
+              id: result.id,
               name: result.get('name'),
               subcategories: result.get('subcategories')
             });

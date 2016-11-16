@@ -18,8 +18,8 @@
         templateUrl: 'templates/footer.html'
       });
 
-    $urlRouterProvider
-     .otherwise('/tab/newsFeed');
+    // $urlRouterProvider
+    //  .otherwise('/tab/newsFeed');
 
   }
 
