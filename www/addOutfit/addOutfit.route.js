@@ -1,3 +1,6 @@
+/**
+ * Created by Theo on 05/06/2016.
+ */
 (function() {
   'use strict';
 
@@ -8,12 +11,13 @@
   /* @ngInject */
   function RouteConfiguration ($stateProvider) {
     $stateProvider
-      .state('tab.outfit', {
-        url: '/outfit',
+      .state('tab.add-outfit', {
+        /* url: '/outfit/:outfitdetailsId',*/
+        url: '/outfit/addOutfit',
         views: {
           'tab-outfit': {
-            templateUrl: 'outfit/outfit.html',
-            controller: 'OutfitController'
+            templateUrl: 'addOutfit/addOutfit.html',
+            controller: 'AddOutfitController'
           }
         }
 

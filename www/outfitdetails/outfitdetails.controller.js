@@ -6,12 +6,11 @@
 
   angular
     .module('cupboard-ng')
-    .controller('OutfitController', OutfitController);
+    .controller('OutfitdetailsController', OutfitdetailsController);
 
   /* @ngInject */
-  function OutfitController($scope) {
-
-
+  function OutfitdetailsController($scope) {
+    
 
   }
 
