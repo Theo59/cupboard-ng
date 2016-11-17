@@ -1,11 +1,11 @@
 <ion-modal-view>
   <ion-header-bar>
-    <h1 class="title">Ajouter une piéce</h1>
+    <h1 class="title">Modifier une piéce</h1>
   </ion-header-bar>
   <ion-content>
     <div class="categories-container">
       <div class="card categorie-card" ng-repeat="clothe in clothes">
-        <a class="item item-text-wrap" ng-href="">
+        <a class="item item-text-wrap" ng-click="updateElement(clothe)">
           <img height="50" width="50" ng-src="{{ clothe.picture._url }}">
           <h2 class="ng-binding">{{ clothe.name }}</h2>
         </a>
@@ -16,7 +16,7 @@
         <a class="item item-text-wrap" ng-click="closeModal()">
           <center><h2 class="ng-binding">Close</h2></center>
         </a>
-
+       <p>{{ clothe.type }}</p>
       </div>
     </div>
   </ion-content>

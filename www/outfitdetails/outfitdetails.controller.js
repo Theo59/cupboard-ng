@@ -84,7 +84,8 @@
       $scope.modal = modal;
     });
 
-    $scope.openModal = function() {
+    $scope.openModal = function(selectedType) {
+      $scope.selectedType = selectedType;
       $scope.modal.show();
     };
 
@@ -92,7 +93,53 @@
       $scope.modal.hide();
     };
 
+    $scope.updateElement = function($param){
+      alert($stateParams.outfitdetailsId);
+      alert($param.id);
+      alert($scope.selectedType);
 
+      var Outfit = Parse.Object.extend("Outfit");
+      var outfit = new Outfit();
+
+
+
+
+
+      /*
+      var Outfit = Parse.Object.extend("Outfit");
+      var outfit = new Outfit();
+      outfit.id = $stateParams.outfitdetailsId;
+
+
+      outfit.set("chest", $scope.outfit);
+      outfit.set("sellState", 1);
+      */
+
+
+
+
+      //document.getElementById('elementHead').innerHTML = "<i class='icon ion-happy'></i> test vetement";
+
+
+
+      /*
+      var Outfit = Parse.Object.extend("Outfit");
+        var outfit = new Outfit();
+        outfit.id = $scope.outfit.id;
+        clothe.set("chest", $scope.outfit);
+        clothe.set("sellState", 1);
+
+
+        clothe.save(null, {
+          success: function(clothe) {
+          },
+          error: function () {
+            alert('fail');
+          }
+        });
+      $scope.modal.hide();
+    }*/
+    }
   }
 
 })();

@@ -1,43 +1,40 @@
 <ion-view view-title="Ajout d'une tenue" id="page_addoutfit" class=" ">
   <ion-content padding="true" class="has-header">
-    <div class="list card">
-
-      <a class="item item-icon-left" id='elementHead' ng-click="openModal()">
-        <i class="icon ion-happy"></i>
-        Tête
+    <div class="list">
+      <a class="item item-thumbnail-left custom-thumbnail" ng-click="openModal()">
+        <img ng-src="">
+        <h2>Tête</h2>
+        <!--<p>{{ clothe.type }}</p>-->
       </a>
 
-      <a  class="item item-icon-left" ng-click="openModal()">
-        <i class="icon ion-bowtie"></i>
-        Accessoires
+      <a class="item item-thumbnail-left custom-thumbnail" ng-click="openModal()">
+        <img ng-src="">
+        <h2>Accessoires</h2>
+        <!--<p>{{ clothe.type }}</p>-->
       </a>
 
-
-      <a  class="item item-icon-left" ng-click="openModal()">
-        <i class="icon ion-tshirt"></i>
-        Torse
+      <a class="item item-thumbnail-left custom-thumbnail" ng-click="openModal()">
+        <img ng-src="">
+        <h2>Torse</h2>
+        <!--<p>{{ clothe.type }}</p>-->
       </a>
 
-      <a  class="item item-icon-left" ng-click="openModal()">
-        <i class="icon ion-android-hand"></i>
-        Main
+      <a class="item item-thumbnail-left custom-thumbnail" ng-click="openModal()">
+        <img ng-src="">
+        <h2>Bas</h2>
+        <!--<p>{{ clothe.type }}</p>-->
       </a>
 
-
-      <a  class="item item-icon-left" ng-click="openModal()">
-        <i class="icon ion-tshirt"></i>
-        Bas
+      <a class="item item-thumbnail-left custom-thumbnail" ng-click="openModal()">
+        <img ng-src="">
+        <h2>Pieds</h2>
+        <!--<p>{{ clothe.type }}</p>-->
       </a>
-
-      <a  class="item item-icon-left" ng-click="openModal()">
-        <i class="icon ion-tshirt"></i>
-        Pieds
-      </a>
-
     </div>
     <div class="text-align:right">
       <button class="button pull-right" ng-click="saveOutfit(outfit)">Ajouter</button>
     </div>
+
   </ion-content>
 </ion-view>
 
