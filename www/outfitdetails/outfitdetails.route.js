@@ -8,11 +8,14 @@
   /* @ngInject */
   function RouteConfiguration ($stateProvider) {
     $stateProvider
-      .state('outfitdetails', {
+      .state('tab.outfitdetails', {
         url: '/outfit/:outfitdetailsId',
-       /* url: '/outfitdetails',*/
-        templateUrl: 'outfitdetails/outfitdetails.html',
-        controller: 'OutfitdetailsController'
+        views: {
+          'tab-outfit': {
+            templateUrl: 'outfitdetails/outfitdetails.html',
+            controller: 'OutfitdetailsController'
+          }
+        }
       })
   }
 })();

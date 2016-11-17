@@ -12,7 +12,6 @@
   function RouteConfiguration ($stateProvider) {
     $stateProvider
       .state('tab.add-outfit', {
-        /* url: '/outfit/:outfitdetailsId',*/
         url: '/outfit/addOutfit',
         views: {
           'tab-outfit': {
