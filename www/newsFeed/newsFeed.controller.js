@@ -13,6 +13,8 @@
 
     $scope.clothesInSell = [];
 
+    $scope.reload = reload;
+
     getClothesInSell();
 
     function getClothesInSell() {
@@ -35,6 +37,13 @@
           alert("Error: " + error.code + " " + error.message);
         }
       });
+    }
+
+    function reload () {
+      $scope.clothesInSell = [];
+      getClothesInSell();
+      $scope.$broadcast('scroll.refreshComplete');
+
     }
   }
 
