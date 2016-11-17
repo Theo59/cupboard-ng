@@ -11,8 +11,13 @@
   /* @ngInject */
   function ClotheInSellController($scope, $stateParams) {
 
+    $scope.buy = buy;
 
     getClotheInSell();
+
+    function buy (clothe) {
+      toastr.success(clothe.name + ' acheté');
+    }
 
     function getClotheInSell () {
       var Clothe = Parse.Object.extend("Clothe");

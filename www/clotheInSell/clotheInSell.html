@@ -3,7 +3,7 @@
 
     <div class="list card">
 
-      <div class="item item-image">
+      <div class="item">
         <img ng-src="{{ clothe.picture._url }}">
       </div>
 
@@ -18,7 +18,7 @@
         <p>Marque : {{ clothe.brandt }}</p>
         <p>Taille : {{ clothe.size }}</p>
       </div>
-      <button class="item item-icon-left assertive">
+      <button class="item item-icon-left assertive" ng-click="buy(clothe)">
         <i class="icon ion-ios-cart"></i>
         Acheter
       </button>

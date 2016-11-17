@@ -30,9 +30,8 @@
         // alert(parseFile);
 
         parseFile.save().then(function(response) {
-          alert('saving file: ' + ' ' + response);
+
         }, function(error) {
-          alert("Erreur lors de l'insert");
         });
 
         clothe.save().then(function() {
@@ -47,8 +46,7 @@
 
           clothe.save(null, {
             success: function(newClothe) {
-              // Execute any logic that should take place after the object is saved.
-              // alert('New object created by user: ' + newClothe);
+              toastr.success(newClothe.get('name') + ' mis en vente');
             },
             error: function(newClothe, error) {
               // Execute any logic that should take place if the save fails.

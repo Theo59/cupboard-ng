@@ -58,6 +58,11 @@
 
       clothe.save(null, {
         success: function(clothe) {
+          if ($scope.clothe.inSell) {
+            toastr.success($scope.clothe.name + ' mis en vente');
+          } else {
+            toastr.success($scope.clothe.name + ' retiré de la vente');
+          }
         },
         error: function () {
           alert('fail');
