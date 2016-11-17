@@ -29,7 +29,8 @@
             $scope.outfits.push({
               name: result.get('name'),
               //subcategories: result.get('subcategories')
-              id: result.id
+              id: result.id,
+              update: result.get('updatedAt')
             });
           });
         },

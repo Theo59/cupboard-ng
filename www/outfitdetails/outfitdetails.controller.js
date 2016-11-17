@@ -12,7 +12,6 @@
   function OutfitdetailsController($scope, $stateParams, $ionicModal) {
 
     $scope.outfitdetails = {};
-    $scope.outfitdetails.clothes = [];
     $scope.clothes = [];
 
     activate();
@@ -23,6 +22,7 @@
     }
 
     function getDetails() {
+      $scope.outfitdetails.clothes = [];
       var Outfit = Parse.Object.extend("Outfit");
       var query = new Parse.Query(Outfit);
       query.get($stateParams.outfitdetailsId, {
@@ -94,14 +94,49 @@
     };
 
     $scope.updateElement = function($param){
-      alert($stateParams.outfitdetailsId);
-      alert($param.id);
-      alert($scope.selectedType);
+      //alert($stateParams.outfitdetailsId);
+      //alert($paxram.id);
+      //alert($scope.selectedType);
 
+      var sType = "";
       var Outfit = Parse.Object.extend("Outfit");
       var outfit = new Outfit();
+      outfit.id = $stateParams.outfitdetailsId;
 
 
+      switch($scope.selectedType) {
+        case "Chapeau":
+          sType = 'hat';
+          break;
+        case "Accessoire":
+          sType = 'accesorie';
+          break;
+        case "Torse":
+          sType = 'chest';
+          break;
+        case "Pantalon":
+          sType = 'trouser';
+          break;
+        case "Pieds":
+          sType = 'foot';
+          break;
+        default:
+          break;
+      }
+
+      outfit.set(sType, $param.id);
+
+      outfit.save(null, {
+        success: function(outfit) {
+          $scope.outfitdetails = {};
+          getDetails();
+        },
+        error: function () {
+          alert('fail');
+        }
+      });
+
+      $scope.modal.hide();
 
 
 

@@ -6,7 +6,7 @@
   <ion-content>
     <div class="categories-container">
       <div class="card categorie-card" ng-repeat="clothe in clothes">
-        <a class="item item-text-wrap" ng-click="addElement()">
+        <a class="item item-text-wrap" ng-click="addElement(clothe)">
           <img height="50" width="50" ng-src="{{ clothe.picture._url }}">
           <h2 class="ng-binding">{{ clothe.name }}</h2>
         </a>
@@ -22,3 +22,5 @@
     </div>
   </ion-content>
 </ion-modal-view>
+
+

@@ -7,7 +7,7 @@
       </a>
     </center>
     <div class="outfits-container">
-      <div ng-repeat="of in outfits">
+      <div ng-repeat="of in outfits | orderBy:'-update'">
         <!-- <div class="row" ng-if="$even"> -->
           <div class="col">
         <!--<div ng-if="$index%3==0" class="row">-->
