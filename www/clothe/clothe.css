@@ -1,0 +1,5 @@
+.title-and-vente {
+    display: flex;
+    justify-content: space-between;
+}
+

@@ -9,15 +9,16 @@
 
         <div class="item item-body" href="#">
           <div class="row">
-            <div class="col col-66 col-center">
-              <h1 style="margin-top: 0px;font-size:32px;">{{ clothe.name }}</h1>
-            </div>
-            <div class="col col-33 col-center">
-              <i class="ion-android-star"></i>
-              <i class="ion-android-star"></i>
-              <i class="ion-android-star"></i>
-              <i class="ion-android-star"></i>
-              <i class="ion-android-star-outline"></i>
+            <div class="title-and-vente">
+              <div>
+                <h1 style="margin-top: 0px;font-size:32px;">{{ clothe.name }}</h1>
+              </div>
+              <div ng-if="clothe.sellState !== 3">
+                <ion-toggle ng-model="clothe.inSell" ng-change="toggleChange()" toggle-class="toggle-calm">En vente</ion-toggle>
+              </div>
+              <div ng-if="clothe.sellState === 3">
+                <span>VENDU</span>
+              </div>
             </div>
           </div>
           <p>Marque : {{ clothe.brandt }}</p>
