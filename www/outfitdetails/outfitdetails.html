@@ -1,0 +1,16 @@
+<ion-view title="Outfitdetails" id="page7" class=" ">
+  <ion-content padding="true" class="has-header">
+    <div class="outfits-container">
+      <center><h1>{{ outfitdetails.name }}</h1></center>
+      <div class="list">
+        <div ng-repeat="clothe in outfitdetails.clothes">
+          <a class="item item-thumbnail-left custom-thumbnail" href="#" ng-click="openModal()">
+            <img ng-src="{{ clothe.picture._url }}">
+            <h2>{{ clothe.name }}</h2>
+            <p>{{ clothe.type }}</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

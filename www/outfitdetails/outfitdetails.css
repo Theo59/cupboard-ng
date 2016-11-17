@@ -1,0 +1,15 @@
+.item-image{
+  width:50% !important;
+  height : 50% !important;
+}
+
+
+.ionic .custom-thumbnail > img:first-child, .ionic .custom-thumbnail .item-image, .ionic .custom-thumbnail .item-content > img:first-child, .ionic .custom-thumbnail .item-content .item-image {
+  top: 0px !important;
+  left: 0px !important;
+  max-width: 100px !important;
+  max-height: 100px !important;
+}
+
+
+
