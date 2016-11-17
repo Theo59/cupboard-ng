@@ -21,6 +21,7 @@
       var Clothe = Parse.Object.extend("Clothe");
       var query = new Parse.Query(Clothe);
       query.equalTo('sellState', 2);
+      query.descending("updatedAt");
       query.find({
         success: function(results) {
           angular.forEach(results, function(result) {

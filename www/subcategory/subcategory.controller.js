@@ -20,6 +20,7 @@
       var query = new Parse.Query(Clothe);
       query.equalTo("subCategorie", $stateParams.subcategoryName);
       query.equalTo("user", Parse.User.current());
+      query.descending("createdAt");
       query.find({
         success: function(results) {
           console.log(results);
