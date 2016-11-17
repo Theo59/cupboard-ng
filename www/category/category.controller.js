@@ -22,20 +22,14 @@
       var Categorie = Parse.Object.extend("Categorie");
       var query = new Parse.Query(Categorie);
       query.equalTo("name", $stateParams.categoryName);
-      query.find({
-        success: function(result) {
-          $scope.categorie = {
-            id: result[0].id,
-            name: result[0].get('name'),
-            subcategories: result[0].get('subcategories')
-          }
-        },
-        error: function(error) {
-          alert("Error: " + error.code + " " + error.message);
+      query.find().then(function (result) {
+        $scope.categorie = {
+          id: result[0].id,
+          name: result[0].get('name'),
+          subcategories: result[0].get('subcategories')
         }
       });
     }
-
   }
 
 })();

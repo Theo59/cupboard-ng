@@ -19,7 +19,6 @@
       var Categorie = Parse.Object.extend("Categorie");
       var query = new Parse.Query(Categorie);
       query.find().then(function(results) {
-        debugger;
         console.log(results);
         angular.forEach(results, function(result) {
           $scope.categories.push({

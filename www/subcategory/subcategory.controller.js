@@ -21,8 +21,7 @@
       query.equalTo("subCategorie", $stateParams.subcategoryName);
       query.equalTo("user", Parse.User.current());
       query.descending("createdAt");
-      query.find({
-        success: function(results) {
+      query.find().then(function(results) {
           console.log(results);
           angular.forEach(results, function(result) {
             $scope.clothes.push({
@@ -35,10 +34,6 @@
               pictureUrl: result.get('picture')
             });
           });
-        },
-        error: function(error) {
-          alert("Error: " + error.code + " " + error.message);
-        }
       });
     }
 
