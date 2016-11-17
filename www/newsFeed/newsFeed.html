@@ -1,12 +1,16 @@
 <ion-view view-title="Dernieres annonces" class="">
   <ion-content padding="true" class="has-header">
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="NewsFeedController.getClothesInSell()">
+    </ion-refresher>
 
     <!-- UN PRODUIT -->
     <div class="list card" ng-repeat="clothe in clothesInSell">
       <div class="item item-avatar">
+        <img src="http://image.flaticon.com/icons/svg/145/145862.svg">
         <h2>{{ clothe.name }}</h2>
-        <span>Marque: {{ clothe.brandt }}</span>
-        <span>Taille: {{ clothe.size }}</span>
+        <p>Marque: {{ clothe.brandt }} - Taille: {{ clothe.size }}</p>
       </div>
 
       <div class="item item-image">
@@ -18,7 +22,6 @@
         Voir le produit
       </a>
     </div>
-
 
   </ion-content>
 
