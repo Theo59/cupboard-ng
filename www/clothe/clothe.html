@@ -1,16 +1,16 @@
-<ion-view title="UN VETEMENT" id="page_a_clothe" class=" ">
+<ion-view title="VETEMENT" id="page_a_clothe" class=" ">
     <ion-content padding="true" class="has-header">
 
       <div class="list card">
 
         <div class="item item-image">
-          <img src="https://s-media-cache-ak0.pinimg.com/236x/0d/49/53/0d49535360f0d3f64834d8a69db7343f.jpg">
+          <img ng-src="{{ clothe.picture._url }}">
         </div>
 
         <div class="item item-body" href="#">
           <div class="row">
             <div class="col col-66 col-center">
-              <h1 style="margin-top: 0px;font-size:32px;">Robe Tommy</h1>
+              <h1 style="margin-top: 0px;font-size:32px;">{{ clothe.name }}</h1>
             </div>
             <div class="col col-33 col-center">
               <i class="ion-android-star"></i>
@@ -20,8 +20,8 @@
               <i class="ion-android-star-outline"></i>
             </div>
           </div>
-          <p>Marque : Tommy Hilfiger</p>
-          <p>Taille : 38</p>
+          <p>Marque : {{ clothe.brandt }}</p>
+          <p>Taille : {{ clothe.size }}</p>
         </div>
 
       </div>

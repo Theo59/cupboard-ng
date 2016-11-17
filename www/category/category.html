@@ -1,9 +1,9 @@
-<ion-view view-title="VETEMENTS" id="page_clothes" class=" ">
+<ion-view view-title="SOUS-CATEGORIE" id="page_clothes" class=" ">
     <ion-content padding="true" class="has-header">
 
       <div class="categories-container">
         <div class="card categorie-card" ng-repeat="cat in categorie.subcategories">
-          <a class="item item-text-wrap" ng-href="#/tab/cupboard/{{ categorie.id }}/{{ cat }}">
+          <a class="item item-text-wrap" ng-href="#/tab/cupboard/{{ categorie.name }}/{{ cat }}">
             <h1><i class="ion-tshirt-outline"></i></h1>
             <h2 class="ng-binding">{{ cat }}</h2>
           </a>

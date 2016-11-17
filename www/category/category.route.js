@@ -9,7 +9,7 @@
   function RouteConfiguration ($stateProvider) {
     $stateProvider
       .state('tab.category', {
-        url: '/cupboard/:categoryId',
+        url: '/cupboard/:categoryName',
         views: {
           'tab-cupboard': {
             templateUrl: 'category/category.html',

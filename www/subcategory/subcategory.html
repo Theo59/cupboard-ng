@@ -1,12 +1,14 @@
 <ion-view title="VETEMENTS" id="page_clothes" class=" ">
-    <ion-content padding="true" class="has-header">
+  <ion-content padding="true" class="has-header">
 
-      <div class="categories-container">
-        <div class="card categorie-card" ng-repeat="clothe in clothes">
-            <img height="50" width="50" ng-src="{{ clothe.pictureUrl._url }}">
-            <h2 class="ng-binding">{{ clothe.name }}</h2>
-        </div>
+    <div class="categories-container">
+      <div class="card categorie-card" ng-repeat="clothe in clothes">
+        <a class="item item-text-wrap" ng-href="#/tab/cupboard/{{ clothe.categorie }}/{{ clothe.subcategorie }}/{{ clothe.id }}">
+          <img height="50" width="50" ng-src="{{ clothe.pictureUrl._url }}">
+          <h2 class="ng-binding">{{ clothe.name }}</h2>
+        </a>
       </div>
+    </div>
 
-    </ion-content>
+  </ion-content>
 </ion-view>

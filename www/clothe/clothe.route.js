@@ -1,6 +1,3 @@
-/**
- * Created by Theo on 05/06/2016.
- */
 (function() {
   'use strict';
 
@@ -11,8 +8,8 @@
   /* @ngInject */
   function RouteConfiguration ($stateProvider) {
     $stateProvider
-      .state('tabs.clothe', {
-        url: '/cupboard/:categoryId/:subcategoryId/clotheId',
+      .state('tab.clothe', {
+        url: '/cupboard/:categoryName/:subcategoryName/:clotheId',
         views: {
           'tab-cupboard': {
             templateUrl: 'clothe/clothe.html',

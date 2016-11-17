@@ -25,6 +25,8 @@
             $scope.clothes.push({
               id: result.id,
               name: result.get('name'),
+              categorie: result.get('categorie'),
+              subcategorie: result.get('subCategorie'),
               pictureUrl: result.get('picture')
             });
           });
