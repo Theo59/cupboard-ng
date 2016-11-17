@@ -41,10 +41,6 @@
         }
       });
     }
-
-    function toggleChange () {
-      alert($scope.clothe.inSell);
-    }
   }
 
 })();
