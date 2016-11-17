@@ -9,13 +9,10 @@
   function RouteConfiguration ($stateProvider) {
     $stateProvider
       .state('outfitdetails', {
-       /* url: '/outfit/:outfitdetailsId',*/
-        url: '/outfitdetails',
+        url: '/outfit/:outfitdetailsId',
+       /* url: '/outfitdetails',*/
         templateUrl: 'outfitdetails/outfitdetails.html',
         controller: 'OutfitdetailsController'
-
-        
-
       })
   }
 })();
