@@ -35,6 +35,8 @@
             $scope.clothe.inSell = false;
           } else if ($scope.clothe.sellState === 2) {
             $scope.clothe.inSell = true;
+          } else if (!$scope.clothe.sellState) {
+            $scope.clothe.inSell = false;
           }
         },
         error: function(error) {
@@ -44,7 +46,23 @@
     }
 
     function toggleChange () {
-      alert($scope.clothe.inSell);
+      var Clothe = Parse.Object.extend("Clothe");
+      var clothe = new Clothe();
+      clothe.id = $scope.clothe.id;
+
+      if ($scope.clothe.inSell) {
+        clothe.set("sellState", 2);
+      } else {
+        clothe.set("sellState", 1);
+      }
+
+      clothe.save(null, {
+        success: function(clothe) {
+        },
+        error: function () {
+          alert('fail');
+        }
+      });
     }
   }
 
