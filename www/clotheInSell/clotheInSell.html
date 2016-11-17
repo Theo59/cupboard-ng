@@ -1,0 +1,29 @@
+<ion-view title="{{ clothe.name }}" id="page_a_clothe" class=" ">
+  <ion-content padding="true" class="has-header">
+
+    <div class="list card">
+
+      <div class="item item-image">
+        <img ng-src="{{ clothe.picture._url }}">
+      </div>
+
+      <div class="item item-body" href="#">
+        <div class="row">
+          <div class="title-and-vente">
+            <div>
+              <h1 style="margin-top: 0px;font-size:32px;">{{ clothe.name }}</h1>
+            </div>
+          </div>
+        </div>
+        <p>Marque : {{ clothe.brandt }}</p>
+        <p>Taille : {{ clothe.size }}</p>
+      </div>
+      <button class="item item-icon-left assertive">
+        <i class="icon ion-ios-cart"></i>
+        Acheter
+      </button>
+
+    </div>
+
+  </ion-content>
+</ion-view>
