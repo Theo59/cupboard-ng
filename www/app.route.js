@@ -17,9 +17,12 @@
         abstract: true,
         templateUrl: 'templates/footer.html'
       });
+    //
+    // $urlRouterProvider
+    //  .otherwise('login');
 
-    $urlRouterProvider
-     .otherwise('login');
+    // $urlRouterProvider
+    //  .otherwise('login');
 
   }
 

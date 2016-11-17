@@ -11,13 +11,16 @@
   /* @ngInject */
   function RouteConfiguration ($stateProvider) {
     $stateProvider
-      .state('reset', {
-        url: '/reset',
-        templateUrl: 'reset/reset.html',
-        controller: 'ResetController'
+      .state('tab.add-outfit', {
+        url: '/outfit/addOutfit',
+        views: {
+          'tab-outfit': {
+            templateUrl: 'addOutfit/addOutfit.html',
+            controller: 'AddOutfitController'
+          }
+        }
+
       })
   }
 
 })();
-
-

@@ -1,0 +1,35 @@
+<ion-view title="Outfit" id="page6" class=" ">
+  <ion-content padding="true" class="has-header">
+    <center>
+      <a class="tab-item" ui-sref="tab.add-outfit">
+        <i class="icon ion-ios-plus"></i>
+        Ajouter une tenue
+      </a>
+    </center>
+    <div class="outfits-container">
+      <div ng-repeat="of in outfits">
+        <!-- <div class="row" ng-if="$even"> -->
+          <div class="col">
+        <!--<div ng-if="$index%3==0" class="row">-->
+            <div class="card">
+              <a class="item item-text-wrap" href="#/tab/outfit/{{ of.id }}">
+                <h1><i class="ion-tshirt-outline"></i></h1>
+                <h2 class="ng-binding">{{ of.name }}</h2>
+              </a>
+            </div>
+          </div>
+          <!--<div class="col">
+            <!--<div ng-if="$index%3==0" class="row">-->
+         <!--   <div class="card">
+              <a class="item item-text-wrap" href="#/outfit/{{ of.id + 1}}">
+                <h1><i class="ion-tshirt-outline"></i></h1>
+                <h2 class="ng-binding">{{ of.name + 1}}</h2>
+              </a>
+            </div>
+          </div>-->
+
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

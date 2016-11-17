@@ -9,47 +9,30 @@
     .controller('NewsFeedController', NewsFeedController);
 
   /* @ngInject */
-  function NewsFeedController($scope, ClotheService, CategorieService) {
+  function NewsFeedController($scope) {
 
-    $scope.categories = [];
-    $scope.users = [];
-    $scope.saveUser = saveUser;
+    $scope.clothesInSell = [];
 
-    activate();
+    getClothesInSell();
 
-    function activate() {
-       getCategories();
-    }
-
-    function getClothe() {
-      // ClotheService.getClothes();
-    }
-
-    // function getCategories() {
-    //   CategorieService.getCategories().then(function (data) {
-    //     $scope.categories = data;
-    //   });
-    // }
-
-    function getCategories() {
-      $scope.categories = CategorieService.getCategories();
-    }
-
-    function saveUser(userName){
-      var User = Parse.Object.extend("users");
-      var user = new User();
-
-      user.set("username", userName);
-
-      user.save(null, {
-        success: function(user) {
-          $scope.users = user;
-          alert('New object created with objectId: ' + user.id);
+    function getClothesInSell() {
+      var Clothe = Parse.Object.extend("Clothe");
+      var query = new Parse.Query(Clothe);
+      query.equalTo('sellState', 2);
+      query.find({
+        success: function(results) {
+          angular.forEach(results, function(result) {
+            $scope.clothesInSell.push({
+              id: result.id,
+              name: result.get('name'),
+              brandt: result.get('brandt'),
+              size: result.get('size'),
+              picture: result.get('picture')
+            });
+          });
         },
-        error: function(user, error) {
-          // Execute any logic that should take place if the save fails.
-          // error is a Parse.Error with an error code and message.
-          alert('Failed to create new object, with error code: ' + error.message);
+        error: function(error) {
+          alert("Error: " + error.code + " " + error.message);
         }
       });
     }
