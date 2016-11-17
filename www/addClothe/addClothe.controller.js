@@ -65,7 +65,7 @@
 
     function saveClothe(clothe) {
       ClotheService.save(clothe, imageData);
-
+      $state.go('tab-cupboard');
     }
   }
 

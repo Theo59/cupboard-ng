@@ -46,7 +46,8 @@
 
           clothe.save(null, {
             success: function(newClothe) {
-              toastr.success(newClothe.get('name') + ' mis en vente');
+              toastr.success(newClothe.get('name') + ' ajouté');
+
             },
             error: function(newClothe, error) {
               // Execute any logic that should take place if the save fails.
